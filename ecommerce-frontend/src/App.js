@@ -9,7 +9,8 @@ import Button from "react-bootstrap/Button";
 import Navbar from "react-bootstrap/Navbar";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Homescreen from "./Screens/Homescreen";
-import ProductScreen from "./Screens/Product";
+import ProductScreen from "./Screens/ProductScreen";
+import { useReducer } from "react";
 
 function App() {
   return (
@@ -31,10 +32,15 @@ function App() {
             </Navbar.Brand>
           </Container>
         </Navbar>
-        <Routes>
-          <Route path="/" element={<Homescreen />} />
-          <Route path="product/:slug" element={<ProductScreen />} />
-        </Routes>
+        <Container className="main-container">
+          <Routes>
+            <Route path="/" element={<Homescreen />} />
+            <Route path="product/:slug" element={<ProductScreen />} />
+          </Routes>
+        <footer className="footer">
+          @Copyright- Rudra--- All rights reserved
+        </footer>
+        </Container>
       </BrowserRouter>
     </>
   );
